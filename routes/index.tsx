@@ -1,4 +1,5 @@
 import { Head } from "$fresh/runtime.ts";
+import { PathsBar } from "../components/PathsBar.tsx";
 import Container from "../islands/Container.tsx";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
           class="w-32 h-32"
           alt="the fresh logo: a sliced lemon dripping with juice"
         />
+        <PathsBar paths={['bif', 'buf']}></PathsBar>
         <Container start={3} />
       </div>
     </>
