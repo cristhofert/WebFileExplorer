@@ -1,5 +1,6 @@
 import { useState } from "preact/hooks";
-import { Button } from "../components/Button.tsx";
+import { File } from "../components/File.tsx";
+import { Folder } from "../components/Folder.tsx";
 
 interface CounterProps {
   start: number;
@@ -30,9 +31,9 @@ export default function Container(props: CounterProps) {
     <div class="grid grid-cols-10 gap-2 w-full">
       {items.map((item) => (
         item.extentions === "/" ?
-        <Button onClick={() => setCount(count - 1)}>{ item.name }/</Button>
+        <Folder onClick={() => setCount(count - 1)}>{ item.name }/</Folder>
         : 
-        <Button onClick={() => setCount(count - 1)}>{ item.name }</Button>
+        <File onClick={() => setCount(count - 1)} extentions={item.extentions} name={item.name}></File>
       ))
         }
     </div>
